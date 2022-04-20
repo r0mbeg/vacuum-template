@@ -162,6 +162,8 @@ public class Main {
                 writer.write("set message=\"Bases at LPU " + lpuName + " were vacuumized!\"" + "\n");
                 writer.write("curl https://api.telegram.org/bot%botToken%/sendMessage?chat_id=%chatID%^^^&text=%message%"+ "\n");
 
+            default:
+                System.out.println("Error!");
         }
 
 
