@@ -4,7 +4,7 @@ import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String desktopDirectory = "C:\\Users\\sv_office\\Desktop";
+        String desktopDirectory = "C:\\Users\\r0mberg\\Desktop";
 
         ArrayList<String> inputList = new ArrayList<>();
 
@@ -57,7 +57,7 @@ public class Main {
 
         switch (archivation) {
             case "winrar":
-                writer.write("Taskkill /IM SQLiteStudio.exe /F");
+                writer.write("Taskkill /IM SQLiteStudio.exe /F" + "\n");
                 for (int i = 0; i < dbPaths.size(); i++) {
                     writer.write("echo --------------------------" + dbNames.get(i).toUpperCase() + "-------------------------- >> " + logPath + "\n");
                     writer.write("cd /d " + dbDirectories.get(i) + "\n");
@@ -91,9 +91,9 @@ public class Main {
                 writer.write("set botToken=5195909558:AAHeO85DtxK_j09Y3i4cM1KkE4obSr7ng9w" + "\n");
                 writer.write("set message=\"Bases at LPU " + lpuName + " were vacuumized!\"" + "\n");
                 writer.write("curl https://api.telegram.org/bot%botToken%/sendMessage?chat_id=%chatID%^^^&text=%message%"+ "\n");
-
+                break;
             case "7z":
-                writer.write("Taskkill /IM SQLiteStudio.exe /F");
+                writer.write("Taskkill /IM SQLiteStudio.exe /F" + "\n");
                 for (int i = 0; i < dbPaths.size(); i++) {
                     writer.write("echo --------------------------" + dbNames.get(i).toUpperCase() + "-------------------------- >> " + logPath + "\n");
                     writer.write("cd /d " + dbDirectories.get(i) + "\n");
@@ -127,9 +127,9 @@ public class Main {
                 writer.write("set botToken=5195909558:AAHeO85DtxK_j09Y3i4cM1KkE4obSr7ng9w" + "\n");
                 writer.write("set message=\"Bases at LPU " + lpuName + " were vacuumized!\"" + "\n");
                 writer.write("curl https://api.telegram.org/bot%botToken%/sendMessage?chat_id=%chatID%^^^&text=%message%"+ "\n");
-
+                break;
             case "no":
-                writer.write("Taskkill /IM SQLiteStudio.exe /F");
+                writer.write("Taskkill /IM SQLiteStudio.exe /F" + "\n");
                 for (int i = 0; i < dbPaths.size(); i++) {
                     writer.write("echo --------------------------" + dbNames.get(i).toUpperCase() + "-------------------------- >> " + logPath + "\n");
                     writer.write("cd /d " + dbDirectories.get(i) + "\n");
@@ -161,9 +161,10 @@ public class Main {
                 writer.write("set botToken=5195909558:AAHeO85DtxK_j09Y3i4cM1KkE4obSr7ng9w" + "\n");
                 writer.write("set message=\"Bases at LPU " + lpuName + " were vacuumized!\"" + "\n");
                 writer.write("curl https://api.telegram.org/bot%botToken%/sendMessage?chat_id=%chatID%^^^&text=%message%"+ "\n");
-
+                break;
             default:
                 System.out.println("Error!");
+                break;
         }
 
 
