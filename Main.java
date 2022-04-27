@@ -4,7 +4,8 @@ import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String desktopDirectory = "C:\\Users\\r0mberg\\Desktop";
+        String desktopDirectory = System.getProperty("user.home") + "\\Desktop";
+        
 
         ArrayList<String> inputList = new ArrayList<>();
 
