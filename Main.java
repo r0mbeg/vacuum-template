@@ -1,15 +1,19 @@
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Locale;
+
 
 public class Main {
     public static void main(String[] args) throws IOException {
         String desktopDirectory = System.getProperty("user.home") + "\\Desktop";
-        
+        String botToken = "5195909558:AAHeO85DtxK_j09Y3i4cM1KkE4obSr7ng9w";
+        String chat_id = "-1001760421137";
+
+        String lpuName = "my_lpu";
+        String archivation = "no";
 
         ArrayList<String> inputList = new ArrayList<>();
 
-        String archivation = "no";
+
 
         //winRar 7z no
         //sas2
@@ -35,7 +39,7 @@ public class Main {
         String curlPath = inputList.get(1);
         String archiverPath = inputList.get(2);
 
-        String lpuName = "my_lpu";
+
         ArrayList<String> dbPaths = new ArrayList<>();
 
         for (int i = 3; i < inputList.size(); i++) {
@@ -82,16 +86,14 @@ public class Main {
                     writer.write("if exist " + dbNames.get(i) + "_vacuumed.db (\n");
                     writer.write("echo ALERT The base " + dbNames.get(i) + ", number " + i + " at LPU " + lpuName + " wasn't completely vacuumed! >> " + logPath + "\n");
                     writer.write("cd /d " + curlPath + " \n");
-                    writer.write("curl https://api.telegram.org/bot5195909558:AAHeO85DtxK_j09Y3i4cM1KkE4obSr7ng9w/sendMessage?chat_id=266348333^^^&text=" + "\"Database " + dbNames.get(i) + ", number " + i + ", at LPU " + lpuName + " wasn't completely vacuumed!\"" + ")" +"\n");
+                    writer.write("curl https://api.telegram.org/bot" + botToken + "/sendMessage?chat_id=" + chat_id + "^^^&text=" + "\"Database " + dbNames.get(i) + ", number " + i + ", at LPU " + lpuName + " wasn't completely vacuumed!\"" + ")" +"\n");
                     writer.write("echo 7. The old base was deleted %time% >> " + logPath + "\n");
 
                     writer.write("echo ------------------------------------------------------------- >> " + logPath + "\n" + "\n");
                 }
                 writer.write("cd /d " + curlPath + "\n");
-                writer.write("set chatID=266348333" + "\n");
-                writer.write("set botToken=5195909558:AAHeO85DtxK_j09Y3i4cM1KkE4obSr7ng9w" + "\n");
                 writer.write("set message=\"Bases at LPU " + lpuName + " were vacuumized!\"" + "\n");
-                writer.write("curl https://api.telegram.org/bot%botToken%/sendMessage?chat_id=%chatID%^^^&text=%message%"+ "\n");
+                writer.write("curl https://api.telegram.org/bot" + botToken + "/sendMessage?chat_id=" + chat_id + "^^^&text=%message%"+ "\n");
                 break;
             case "7z":
                 writer.write("Taskkill /IM SQLiteStudio.exe /F" + "\n");
@@ -118,16 +120,14 @@ public class Main {
                     writer.write("if exist " + dbNames.get(i) + "_vacuumed.db (\n");
                     writer.write("echo ALERT The base " + dbNames.get(i) + ", number " + i + " at LPU " + lpuName + " wasn't completely vacuumed! >> " + logPath + "\n");
                     writer.write("cd /d " + curlPath + " \n");
-                    writer.write("curl https://api.telegram.org/bot5195909558:AAHeO85DtxK_j09Y3i4cM1KkE4obSr7ng9w/sendMessage?chat_id=266348333^^^&text=" + "\"Database " + dbNames.get(i) + ", number " + i + ", at LPU " + lpuName + " wasn't completely vacuumed!\"" + ")" +"\n");
+                    writer.write("curl https://api.telegram.org/bot" + botToken + "/sendMessage?chat_id=" + chat_id + "^^^&text=" + "\"Database " + dbNames.get(i) + ", number " + i + ", at LPU " + lpuName + " wasn't completely vacuumed!\"" + ")" +"\n");
                     writer.write("echo 7. The old base was deleted %time% >> " + logPath + "\n");
 
                     writer.write("echo ------------------------------------------------------------- >> " + logPath + "\n" + "\n");
                 }
                 writer.write("cd /d " + curlPath + "\n");
-                writer.write("set chatID=266348333" + "\n");
-                writer.write("set botToken=5195909558:AAHeO85DtxK_j09Y3i4cM1KkE4obSr7ng9w" + "\n");
                 writer.write("set message=\"Bases at LPU " + lpuName + " were vacuumized!\"" + "\n");
-                writer.write("curl https://api.telegram.org/bot%botToken%/sendMessage?chat_id=%chatID%^^^&text=%message%"+ "\n");
+                writer.write("curl https://api.telegram.org/bot" + botToken + "/sendMessage?chat_id=" + chat_id + "^^^&text=%message%"+ "\n");
                 break;
             case "no":
                 writer.write("Taskkill /IM SQLiteStudio.exe /F" + "\n");
@@ -152,16 +152,14 @@ public class Main {
                     writer.write("if exist " + dbNames.get(i) + "_vacuumed.db (\n");
                     writer.write("echo ALERT The base " + dbNames.get(i) + ", number " + i + " at LPU " + lpuName + " wasn't completely vacuumed! >> " + logPath + "\n");
                     writer.write("cd /d " + curlPath + " \n");
-                    writer.write("curl https://api.telegram.org/bot5195909558:AAHeO85DtxK_j09Y3i4cM1KkE4obSr7ng9w/sendMessage?chat_id=266348333^^^&text=" + "\"Database " + dbNames.get(i) + ", number " + i + ", at LPU " + lpuName + " wasn't completely vacuumed!\"" + ")" +"\n");
+                    writer.write("curl https://api.telegram.org/bot" + botToken + "/sendMessage?chat_id=" + chat_id + "^^^&text=" + "\"Database " + dbNames.get(i) + ", number " + i + ", at LPU " + lpuName + " wasn't completely vacuumed!\"" + ")" +"\n");
                     writer.write("echo 7. The old base was deleted %time% >> " + logPath + "\n");
 
                     writer.write("echo ------------------------------------------------------------- >> " + logPath + "\n" + "\n");
                 }
                 writer.write("cd /d " + curlPath + "\n");
-                writer.write("set chatID=266348333" + "\n");
-                writer.write("set botToken=5195909558:AAHeO85DtxK_j09Y3i4cM1KkE4obSr7ng9w" + "\n");
                 writer.write("set message=\"Bases at LPU " + lpuName + " were vacuumized!\"" + "\n");
-                writer.write("curl https://api.telegram.org/bot%botToken%/sendMessage?chat_id=%chatID%^^^&text=%message%"+ "\n");
+                writer.write("curl https://api.telegram.org/bot" + botToken + "/sendMessage?chat_id=" + chat_id + "^^^&text=%message%"+ "\n");
                 break;
             default:
                 System.out.println("Error!");
